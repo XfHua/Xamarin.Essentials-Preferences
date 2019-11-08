@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:app43="clr-namespace:App43"
+             x:Class="App43.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <app43:myImageSourceConverter x:Key="ImageSourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+        <Image x:Name="FileImage" 
+            Source="{Binding Path=ImageFile, Converter={StaticResource ImageSourceConverter}}"
+            WidthRequest="200"
+            HeightRequest="200"
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"/>
+        <Button Text="Pick Photo"
+            BackgroundColor="Teal" 
+            TextColor="White" 
+            FontSize="40" 
+            Clicked="PickPhotoClicked"/>
+
+    </StackLayout>
+
+</ContentPage>
